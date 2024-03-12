@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #e2e2e2;
+  padding: 10px;
+}
+
+.lists {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  display: flex;
+}
+
+.header li {
+  list-style-type: none;
+}
+
+#search {
+  border: none;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+#btn {
+  border: none;
+  border-radius: 1px;
+  padding: 1.5px;
+}
+/*# sourceMappingURL=index.3dddc91f.css.map */
