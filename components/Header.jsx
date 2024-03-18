@@ -15,7 +15,7 @@ const Header = function () {
   }, [btnName]);
   return (
     <>
-      <div className="flex">
+      <div className="header">
         <div className="logo-container">
           {/* <img src={LOGO_URL} alt="logo" width={50} height={50} /> */}
 
