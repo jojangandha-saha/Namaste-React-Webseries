@@ -20,7 +20,6 @@
   "homepage": "https://github.com/jojangandha-saha/Namaste-React-series#readme",
   "devDependencies": {
     "parcel": "^2.12.0",
-    "postcss": "^8.4.36",
     "process": "^0.11.10"
   },
   "dependencies": {

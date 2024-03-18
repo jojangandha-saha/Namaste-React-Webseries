@@ -15,11 +15,11 @@ const Header = function () {
   }, [btnName]);
   return (
     <>
-      <div className="header">
+      <div className="flex">
         <div className="logo-container">
           {/* <img src={LOGO_URL} alt="logo" width={50} height={50} /> */}
 
-          <h1 className="jockey-one-regular">FoodDash</h1>
+          <h1 className="text-3xl font-bold underline">FoodDash</h1>
         </div>
         <div className="nav-items">
           <ul>

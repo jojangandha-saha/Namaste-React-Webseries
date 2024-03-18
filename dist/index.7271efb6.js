@@ -27305,12 +27305,12 @@ const Header = function() {
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "header",
+            className: "flex",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "logo-container",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        className: "jockey-one-regular",
+                        className: "text-3xl font-bold underline",
                         children: "FoodDash"
                     }, void 0, false, {
                         fileName: "components/Header.jsx",
