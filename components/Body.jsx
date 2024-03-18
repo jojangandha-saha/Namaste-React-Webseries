@@ -1,6 +1,8 @@
 import ResturantCards from "./ResturantCards";
 import { useEffect, useState } from "react";
 import { API_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import Shimmer from "./Shimmer";
 // import resturanList from "../utils/mockData";
 const Body = function () {
@@ -39,6 +41,9 @@ const Body = function () {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) return <Shimmer />;
 
   //Conditonal rendering
   // if (listOfRes.length === 0) {
@@ -181,7 +186,9 @@ const Body = function () {
 
           {/* best way - map, filter, reduce */}
           {filteredRes.map((res) => (
-            <ResturantCards key={res.info.id} resData={res} />
+            <Link to={"/restaurants/" + res.info.id}>
+              <ResturantCards key={res.info.id} resData={res} />
+            </Link>
           ))}
         </div>
       </div>

@@ -6,4 +6,5 @@ export const LOGO_URL =
 
 //single file multiple export - default exprot must be once - named export
 export const API_URL =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D22.4930383%26lng%3D88.36645080000001%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING";
+  // "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D22.4930383%26lng%3D88.36645080000001%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING";
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.4930383&lng=88.36645080000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";

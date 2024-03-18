@@ -56,3 +56,25 @@
 
 - Client side - not making any network call, everything is inside the app itself. it just load the component
 - Server side ~ make netwrok call, page coming from server itself
+
+Single responsiblity principle?
+
+- any single class/functions should have a single responsiblity. maintaining code into modularity -> to keep code more maintainable & testable -> breaking down code into smaller chunks/modules -> better for unit testing. easy to see for bugs. reusability,maintainalbe, testable.
+- keep components as light as possible, code should be readable.
+
+ex. restaruant menu component should be displaying menu/ restaurant card component should be displaying card only. shouldn't do multiple tasks inside same component.
+
+# FEATURES
+
+- work on displaying restaurant menu as we click on restaurant card, using a custom hooks
+
+- always use "use" while using custom hooks. it provides the concept that react code is being used.
+
+- large scale application must have optimization.
+- for large scale app , parcel/webpack - builds a producation ready code - bundle one js file and provided to browser
+- if not optimized bundled js file size will be increased.
+- frontend app - code must be optimized. break your app down into smaller pices
+
+- build smaller bundles for apps - Code chunking/ Code splitting/ lazy loading / Dynamic bundling
+
+- postcss ~ tool to transform css with js. tailwind uses it bts.

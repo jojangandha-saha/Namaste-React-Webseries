@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "../components/Header";
 import Body from "../components/Body";
@@ -8,8 +8,25 @@ import Contact from "../components/Contact";
 import Error from "../components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestarurantMenu from "../components/RestaurantMenu";
+import Shimmer from "../components/Shimmer";
+// import { faHourglass1 } from "@fortawesome/free-solid-svg-icons";
+// import InstaMart from "../components/InstaMart";
 // import ResturantCards
+//lazy loading - initially instamart code won't be bundled / loaded in to page
+//on deamnd loading - whenever required we will load that page
 
+//lazy - nmaed export
+//main bundle & this lazy loaded bundle are separated
+//import instamart using lazy loading
+//dynamic import
+// const Instamart = React.lazy(() => {
+//   //import function
+//   import("../components/InstaMart");
+// });
+
+// const About = lazy(() => {
+//   import("../components/About");
+// });
 const AppLayout = function () {
   return (
     <>
@@ -50,6 +67,14 @@ const appRouter = createBrowserRouter([
         path: "/restaurants/:resId",
         element: <RestarurantMenu />,
       },
+      // {
+      //   path: "/instamart",
+      //   element: (
+      //     <Suspense fallback={<Shimmer />}>
+      //       <Instamart />
+      //     </Suspense>
+      //   ),
+      // },
     ],
     errorElement: <Error />,
   },
