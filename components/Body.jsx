@@ -110,20 +110,21 @@ const Body = function () {
     <Shimmer />
   ) : (
     <>
-      <div className="body">
-        <div className="filter">
-          <div className="search">
+      <div>
+        <div className="filter flex">
+          <div className="search m-2 p-2">
             <input
               type="text"
-              className="search-bar"
+              className="border border-solid border-zinc-500 p-1 rounded-md "
               value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value);
               }}
               placeholder="Type here to searh"
             />
+
             <button
-              className="search-btn"
+              className=" bg-transparent ... font-medium text-black px-4 py-1 m-4 rounded-full  border border-solid border-slate-700"
               onClick={() => {
                 //filter restaurant cards && update ui
                 //searchText - data/value from input box
@@ -140,19 +141,22 @@ const Body = function () {
               Search
             </button>
           </div>
-          <button
-            className="btn filter-btn"
-            onClick={() => {
-              //Filter logic to get avgRating filtered out
-              const filteredList = listOfRes.filter(
-                (res) => res.info.avgRating > 4
-              );
 
-              setlistOfRes(filteredList);
-            }}
-          >
-            Top rated Resturants
-          </button>
+          <div>
+            <button
+              className=" bg-transparent ... font-medium text-black px-4 py-1 m-8 rounded-full  border border-solid border-slate-700"
+              onClick={() => {
+                //Filter logic to get avgRating filtered out
+                const filteredList = listOfRes.filter(
+                  (res) => res.info.avgRating > 4
+                );
+
+                setlistOfRes(filteredList);
+              }}
+            >
+              Top rated Resturants
+            </button>
+          </div>
 
           {/* <button
             className="btn price-list"
@@ -169,7 +173,7 @@ const Body = function () {
             Price
           </button> */}
         </div>
-        <div className="res-container">
+        <div className="flex flex-wrap">
           {/* resturants card Components */}
           {/* <ResturantCards
               resName="French Loaf"

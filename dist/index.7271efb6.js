@@ -27305,12 +27305,12 @@ const Header = function() {
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "flex",
+            className: "flex justify-between p-4 m-1 mb-3 shadow-md shadow-outer",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "logo-container",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        className: "text-3xl font-bold underline",
+                        className: "text-3xl font-bold font-mono",
                         children: "FoodDash"
                     }, void 0, false, {
                         fileName: "components/Header.jsx",
@@ -27323,10 +27323,12 @@ const Header = function() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "nav-items",
+                    className: "flex items-center",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        className: "flex ",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-4",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                     to: "/",
                                     children: "Home"
@@ -27341,6 +27343,7 @@ const Header = function() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-4",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                     to: "/about",
                                     children: "About Us"
@@ -27355,6 +27358,7 @@ const Header = function() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-4",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                     to: "/contact",
                                     children: "Contact Us"
@@ -27369,6 +27373,7 @@ const Header = function() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-4",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _fa.FaShoppingCart), {}, void 0, false, {
                                     fileName: "components/Header.jsx",
                                     lineNumber: 36,
@@ -27391,6 +27396,7 @@ const Header = function() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-4",
                                 children: [
                                     "Online Status : ",
                                     onlineStatus ? "\uD83D\uDFE2" : "\uD83D\uDD34"
@@ -63681,17 +63687,16 @@ const Body = function() {
         columnNumber: 5
     }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "body",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "filter",
+                    className: "filter flex",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "search",
+                            className: "search m-2 p-2",
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                     type: "text",
-                                    className: "search-bar",
+                                    className: "border border-solid border-zinc-500 p-1 rounded-md ",
                                     value: searchText,
                                     onChange: (e)=>{
                                         setSearchText(e.target.value);
@@ -63703,7 +63708,7 @@ const Body = function() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    className: "search-btn",
+                                    className: " bg-transparent ... font-medium text-black px-4 py-1 m-4 rounded-full  border border-solid border-slate-700",
                                     onClick: ()=>{
                                         //filter restaurant cards && update ui
                                         //searchText - data/value from input box
@@ -63717,7 +63722,7 @@ const Body = function() {
                                     children: "Search"
                                 }, void 0, false, {
                                     fileName: "components/Body.jsx",
-                                    lineNumber: 125,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -63726,17 +63731,23 @@ const Body = function() {
                             lineNumber: 115,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "btn filter-btn",
-                            onClick: ()=>{
-                                //Filter logic to get avgRating filtered out
-                                const filteredList = listOfRes.filter((res)=>res.info.avgRating > 4);
-                                setlistOfRes(filteredList);
-                            },
-                            children: "Top rated Resturants"
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: " bg-transparent ... font-medium text-black px-4 py-1 m-8 rounded-full  border border-solid border-slate-700",
+                                onClick: ()=>{
+                                    //Filter logic to get avgRating filtered out
+                                    const filteredList = listOfRes.filter((res)=>res.info.avgRating > 4);
+                                    setlistOfRes(filteredList);
+                                },
+                                children: "Top rated Resturants"
+                            }, void 0, false, {
+                                fileName: "components/Body.jsx",
+                                lineNumber: 146,
+                                columnNumber: 13
+                            }, this)
                         }, void 0, false, {
                             fileName: "components/Body.jsx",
-                            lineNumber: 143,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this)
                     ]
@@ -63746,24 +63757,24 @@ const Body = function() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "res-container",
+                    className: "flex flex-wrap",
                     children: filteredRes.map((res)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/restaurants/" + res.info.id,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantCardsDefault.default), {
                                 resData: res
                             }, res.info.id, false, {
                                 fileName: "components/Body.jsx",
-                                lineNumber: 190,
+                                lineNumber: 194,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "components/Body.jsx",
-                            lineNumber: 189,
+                            lineNumber: 193,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "components/Body.jsx",
-                    lineNumber: 172,
+                    lineNumber: 176,
                     columnNumber: 9
                 }, this)
             ]
@@ -63806,10 +63817,10 @@ const ResturantCards = function(props) {
     //with optional chain
     const { sla, cloudinaryImageId, name, cuisines, avgRating, costForTwo } = resData?.info;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "res-card",
+        className: "m-4 p-4 w-[250px]  rounded-lg hover:bg-slate-50  hover:scale-105 transition-transform duration-300",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "res-img",
+                className: "rounded-lg",
                 src: (0, _constants.CDN_URL) + cloudinaryImageId,
                 alt: "card-img"
             }, void 0, false, {
@@ -63818,10 +63829,10 @@ const ResturantCards = function(props) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "card-content",
+                className: "",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        className: "card-title",
+                        className: "font-bold py-4 text-lg",
                         children: name
                     }, void 0, false, {
                         fileName: "components/ResturantCards.jsx",
@@ -63859,17 +63870,14 @@ const ResturantCards = function(props) {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                        children: [
-                            "\u20B9",
-                            costForTwo / 100,
-                            " FOR TWO"
-                        ]
-                    }, void 0, true, {
+                        children: costForTwo
+                    }, void 0, false, {
                         fileName: "components/ResturantCards.jsx",
                         lineNumber: 23,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "overflow-hidden whitespace-nowrap",
                         children: cuisines.join(",")
                     }, void 0, false, {
                         fileName: "components/ResturantCards.jsx",
@@ -64019,13 +64027,13 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 function Footer() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
-            className: "footer-container poppins-light",
+            className: "bg-black text-white px-4 py-2 flex justify-around mt-2 text-center",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                    className: "footer-items",
+                    className: "leading-normal",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            className: "jockey-one-regular footer-logo",
+                            className: "text-2xl",
                             children: "FoodDash"
                         }, void 0, false, {
                             fileName: "components/Footer.jsx",
@@ -64046,7 +64054,8 @@ function Footer() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                    children: " Designed & Developed by Jojanangha Saha "
+                    className: "py-3",
+                    children: "Designed & Developed by Jojanangha Saha "
                 }, void 0, false, {
                     fileName: "components/Footer.jsx",
                     lineNumber: 9,
