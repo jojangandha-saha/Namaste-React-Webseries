@@ -19,7 +19,7 @@ const Body = function () {
 
   //whenever state variables updates, react triggers reconciliation cycle
   //it rerenders the component
-  console.log("Body rerenders");
+  console.log("Body rerenders", listOfRes);
   //useEffect
   useEffect(() => {
     fetchData();
@@ -191,6 +191,7 @@ const Body = function () {
           {/* best way - map, filter, reduce */}
           {filteredRes.map((res) => (
             <Link to={"/restaurants/" + res.info.id}>
+              {/* {if restarurant has aggregatedDiscountinfo  show that with card - higher orderfunc} */}
               <ResturantCards key={res.info.id} resData={res} />
             </Link>
           ))}

@@ -63601,7 +63601,7 @@ const Body = function() {
     // const [priceList, setPriceList] = useState(resturanList);
     //whenever state variables updates, react triggers reconciliation cycle
     //it rerenders the component
-    console.log("Body rerenders");
+    console.log("Body rerenders", listOfRes);
     //useEffect
     (0, _react.useEffect)(()=>{
         fetchData();
@@ -63764,7 +63764,7 @@ const Body = function() {
                                 resData: res
                             }, res.info.id, false, {
                                 fileName: "components/Body.jsx",
-                                lineNumber: 194,
+                                lineNumber: 195,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
@@ -63898,6 +63898,24 @@ const ResturantCards = function(props) {
     }, this);
 };
 _c = ResturantCards;
+//higher order component -> take resCard as input and return an enhanced version of
+//res card which has aggregatedDiscountInfoV3
+/**
+ * input as rescard => output rescardAggregated
+ 
+ */ // export const resCardAgg = (ResturantCards) => {
+//   return () => {
+//     return (
+//       <>
+//         <label>
+//           <p>{aggegatedDiscountInfoV3.header}</p>
+//           <p>{aggegatedDiscountInfoV3.subHeader}</p>
+//         </label>
+//         <ResturantCards />
+//       </>
+//     );
+//   };
+// };
 exports.default = ResturantCards;
 var _c;
 $RefreshReg$(_c, "ResturantCards");

@@ -30,4 +30,24 @@ const ResturantCards = function (props) {
   );
 };
 
+//higher order component -> take resCard as input and return an enhanced version of
+//res card which has aggregatedDiscountInfoV3
+/**
+ * input as rescard => output rescardAggregated
+ 
+ */
+
+// export const resCardAgg = (ResturantCards) => {
+//   return () => {
+//     return (
+//       <>
+//         <label>
+//           <p>{aggegatedDiscountInfoV3.header}</p>
+//           <p>{aggegatedDiscountInfoV3.subHeader}</p>
+//         </label>
+//         <ResturantCards />
+//       </>
+//     );
+//   };
+// };
 export default ResturantCards;
