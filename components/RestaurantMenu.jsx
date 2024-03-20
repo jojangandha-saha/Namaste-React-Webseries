@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom"; // import useParams for read `resI
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import Shimmer from "./Shimmer";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestarurantMenu = () => {
   const { resId } = useParams();
@@ -27,23 +28,44 @@ const RestarurantMenu = () => {
     sla,
     aggregatedDiscountInfo,
   } = res?.cards[0]?.card?.card?.info;
+  // console.log(res?.cards[0]?.card?.card?.info);
   const { itemCards } =
     res?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  /*console.log(
+    res?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+  );
+*/
+  const categories =
+    res?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.["card"]?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  console.log(categories);
 
   return (
-    <div>
-      <h1>{name}</h1>
+    <div className="m-10 p-2">
+      <h1 className="font-bold my-5  text-2xl">{name}</h1>
 
       <span>
-        <h4>
-          rating : {avgRating}
-          <br />
-          delivery Time : {sla.deliveryTime}
-        </h4>
+        <h4 className="font-bold p-1"> ⭐ {avgRating}</h4>
+        <hr />
+
+        <div className="flex">
+          <h3 className="font-bold p-2">{sla.deliveryTime} mins</h3>
+
+          <h3 className="font-bold p-2">{costForTwoMessage}</h3>
+        </div>
       </span>
-      <p>
-        {cuisines.join(",")} - {costForTwoMessage}
-      </p>
+      <p className="font-bold text-lg">{cuisines.join(",")}</p>
+      <hr className="h-px my-8 bg-gray-900 border-0 dark:bg-gray-70" />
+      {/* categories accordian*/}
+      {categories.map((category) => (
+        <RestaurantCategory
+          key={category?.card?.card.title}
+          data={category?.card?.card}
+        />
+      ))}
     </div>
   );
 };
