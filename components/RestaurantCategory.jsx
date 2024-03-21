@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Itemlist from "./Itemlist";
 
-function RestaurantCategory({ data }) {
-  const [showItems, setShowItems] = useState(false);
+//this restaurantcategory(child) - controlled compo by restaurant menu(parent) is controlled by restaurant menu as it
+//doesn't have it;s own state, it;s state is controlled by parent component- uncontrolled compo
+function RestaurantCategory({ data, showItems, setShowIndex }) {
+  // const [showItems, setShowItems] = useState(false);
   const handleClick = () => {
-    setShowItems(!showItems);
+    setShowIndex();
   };
   return (
     <div>

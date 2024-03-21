@@ -20,6 +20,7 @@ function Itemlist({ items }) {
                   : item.card.info.defaultPrice / 100}
               </span>
             </div>
+
             <p className="text-xs">{item.card.info.description}</p>
           </div>
           <div className="w-3/12 p-4">

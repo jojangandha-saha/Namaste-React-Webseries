@@ -1,3 +1,4 @@
+import Body from "./Body";
 import { FaShoppingCart } from "react-icons/fa";
 // import { LOGO_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
@@ -19,7 +20,9 @@ const Header = function () {
         <div className="logo-container">
           {/* <img src={LOGO_URL} alt="logo" width={50} height={50} /> */}
 
-          <h1 className="text-3xl font-bold font-mono">FoodDash</h1>
+          <h1 className="text-3xl font-bold font-mono cursor-pointer">
+            <Link to="/"> FoodDash</Link>
+          </h1>
         </div>
         <div className="flex items-center">
           <ul className="flex ">

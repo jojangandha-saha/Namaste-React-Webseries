@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom"; // import useParams for read `resI
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import Shimmer from "./Shimmer";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestarurantMenu = () => {
   const { resId } = useParams();
@@ -17,6 +18,7 @@ const RestarurantMenu = () => {
   //no need to keep track of this state
   //Creating own Custom Hooks
   const res = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(0);
   console.log(res); // const [menuItems, setMenuItems] = useState([]);
   if (res === null) return <Shimmer />;
 
@@ -44,26 +46,30 @@ const RestarurantMenu = () => {
   console.log(categories);
 
   return (
-    <div className="m-10 p-2">
-      <h1 className="font-bold my-5  text-2xl">{name}</h1>
+    <div className="m-10 p-1  ">
+      <div className="p-4  shadow-md">
+        <h1 className="font-bold my-4 text-2xl ">{name}</h1>
+        <span>
+          <h4 className="font-bold p-1"> ⭐ {avgRating}</h4>
+          <hr />
 
-      <span>
-        <h4 className="font-bold p-1"> ⭐ {avgRating}</h4>
-        <hr />
+          <div className="flex">
+            <h3 className="font-bold p-2">{sla.deliveryTime} mins</h3>
 
-        <div className="flex">
-          <h3 className="font-bold p-2">{sla.deliveryTime} mins</h3>
-
-          <h3 className="font-bold p-2">{costForTwoMessage}</h3>
-        </div>
-      </span>
-      <p className="font-bold text-lg">{cuisines.join(",")}</p>
-      <hr className="h-px my-8 bg-gray-900 border-0 dark:bg-gray-70" />
+            <h3 className="font-bold p-2">{costForTwoMessage}</h3>
+          </div>
+        </span>
+        <p className="font-bold text-lg">{cuisines.join(",")}</p>
+      </div>
+      <hr className="h-px my-8 bg-gray-400 border-0 dark:bg-gray-70" />
       {/* categories accordian*/}
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <RestaurantCategory
+          //controlled componenet
           key={category?.card?.card.title}
           data={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
         />
       ))}
     </div>
