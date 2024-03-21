@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CDN_URL } from "../utils/constants";
 
-function Itemlist({ items }) {
+function Itemlist({ items, dummy }) {
   return (
     <div>
       {items.map((item) => (

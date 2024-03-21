@@ -19,7 +19,7 @@ const Body = function () {
 
   //whenever state variables updates, react triggers reconciliation cycle
   //it rerenders the component
-  console.log("Body rerenders", listOfRes);
+  // console.log("Body rerenders", listOfRes);
   //useEffect
   useEffect(() => {
     fetchData();
@@ -28,9 +28,9 @@ const Body = function () {
   const fetchData = async () => {
     const data = await fetch(API_URL);
     const json = await data.json();
-    console.log(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
+    // console.log(
+    //   json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    // );
 
     //optional chaining
     //structure of data changed.

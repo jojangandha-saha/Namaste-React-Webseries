@@ -3,7 +3,7 @@ import Itemlist from "./Itemlist";
 
 //this restaurantcategory(child) - controlled compo by restaurant menu(parent) is controlled by restaurant menu as it
 //doesn't have it;s own state, it;s state is controlled by parent component- uncontrolled compo
-function RestaurantCategory({ data, showItems, setShowIndex }) {
+function RestaurantCategory({ data, showItems, setShowIndex, dummy }) {
   // const [showItems, setShowItems] = useState(false);
   const handleClick = () => {
     setShowIndex();
@@ -22,7 +22,7 @@ function RestaurantCategory({ data, showItems, setShowIndex }) {
           <span>⬇️</span>
         </div>
 
-        {showItems && <Itemlist items={data.itemCards} />}
+        {showItems && <Itemlist items={data.itemCards} dummy={dummy} />}
       </div>
     </div>
   );

@@ -14,11 +14,15 @@ const RestarurantMenu = () => {
   const { resId } = useParams();
   // const [res, setRes] = useState({});
 
+  //If we want to pass this dummy data to ItemList which is grandchild of this
+  //componenet, we can't directly jump to there , we have to pass this data through child of this component
+  //which is Restaurant Category
+  const dummy = "Dummy Data";
   //don't need to worry about how to fetch data only displaying data
   //no need to keep track of this state
   //Creating own Custom Hooks
   const res = useRestaurantMenu(resId);
-  const [showIndex, setShowIndex] = useState(0);
+  const [showIndex, setShowIndex] = useState(null);
   console.log(res); // const [menuItems, setMenuItems] = useState([]);
   if (res === null) return <Shimmer />;
 
@@ -70,6 +74,7 @@ const RestarurantMenu = () => {
           data={category?.card?.card}
           showItems={index === showIndex ? true : false}
           setShowIndex={() => setShowIndex(index)}
+          dummy={dummy}
         />
       ))}
     </div>

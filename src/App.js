@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "../components/Header";
 import Body from "../components/Body";
@@ -9,6 +9,7 @@ import Error from "../components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestarurantMenu from "../components/RestaurantMenu";
 import Shimmer from "../components/Shimmer";
+import UserContext from "../utils/UserContext";
 // import { faHourglass1 } from "@fortawesome/free-solid-svg-icons";
 // import InstaMart from "../components/InstaMart";
 // import ResturantCards
@@ -28,8 +29,22 @@ import Shimmer from "../components/Shimmer";
 //   import("../components/About");
 // });
 const AppLayout = function () {
+  //authentication code written
+  const [userName, setUserName] = useState();
+
+  //how to pass this new context data to context
+
+  // useEffect(() => {
+  //   //make an API call & send username and password
+  //   const data = {
+  //     name: "Jojangandha Saha",
+  //   };
+  //   setUserName(data.name);
+  // });
   return (
     <>
+      {/* {providing new data to the context through context provider} */}
+      {/* <UserContext.Provider value={{loggedInUser : userName}}> */}
       <div className="App">
         <Header />
 
@@ -41,6 +56,7 @@ const AppLayout = function () {
         <Outlet />
         <Footer />
       </div>
+      {/* </UserContext.Provider> */}
     </>
   );
 };

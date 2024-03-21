@@ -1,14 +1,18 @@
 import Body from "./Body";
 import { FaShoppingCart } from "react-icons/fa";
 // import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Header = function () {
   const onlineStatus = useOnlineStatus();
   const [btnName, setBtnName] = useState("Login");
-  console.log("header render");
+  // console.log("header render");
 
+  //CONTEXT
+  const { loggedInUser } = useContext(UserContext);
+  console.log(loggedInUser);
   //with dependency array , useEf only called after first render and once
   //without dep array, useEf called on each time compo render
   useEffect(() => {
@@ -54,6 +58,7 @@ const Header = function () {
             <li className="px-4">
               Online Status : {onlineStatus ? "🟢" : "🔴"}
             </li>
+            <li className="px-4 font-bold">{loggedInUser}</li>
           </ul>
         </div>
       </div>
