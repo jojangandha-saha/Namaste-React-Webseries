@@ -10,6 +10,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestarurantMenu from "../components/RestaurantMenu";
 import Shimmer from "../components/Shimmer";
 import UserContext from "../utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "../utils/appStore";
 // import { faHourglass1 } from "@fortawesome/free-solid-svg-icons";
 // import InstaMart from "../components/InstaMart";
 // import ResturantCards
@@ -43,20 +45,24 @@ const AppLayout = function () {
   // });
   return (
     <>
-      {/* {providing new data to the context through context provider} */}
-      {/* <UserContext.Provider value={{loggedInUser : userName}}> */}
-      <div className="App">
-        <Header />
+      {/* react-redux provider - takes store as a prop, the redux store
+    we have built  - we can also use provider to specific compoenent not the whole app also*/}
+      <Provider store={appStore}>
+        {/* {providing new data to the context through context provider} */}
+        {/* <UserContext.Provider value={{loggedInUser : userName}}> */}
+        <div className="App">
+          <Header />
 
-        {/* push children according to routes
+          {/* push children according to routes
         if path = / -> <Body/>
         if path = /about -><About/> */}
-        {/* outlet will be filled according to the 
+          {/* outlet will be filled according to the 
       path we are on */}
-        <Outlet />
-        <Footer />
-      </div>
-      {/* </UserContext.Provider> */}
+          <Outlet />
+          <Footer />
+        </div>
+        {/* </UserContext.Provider> */}
+      </Provider>
     </>
   );
 };

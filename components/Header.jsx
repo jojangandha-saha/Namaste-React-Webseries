@@ -30,23 +30,25 @@ const Header = function () {
         </div>
         <div className="flex items-center">
           <ul className="flex ">
-            <li className="px-4">
+            <li className="px-4 font-bold">
               <Link to="/">Home</Link>
             </li>
-            <li className="px-4">
+            <li className="px-4 font-bold">
               <Link to="/about">About Us</Link>
             </li>
-            <li className="px-4">
+            <li className="px-4 font-bold">
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li className="px-4">
-              <FaShoppingCart />
+            <li className="px-4 flex">
+              <Link className="p-1 font-bold">Cart</Link>
+
+              <FaShoppingCart className="m-2" />
             </li>
             {/* <li>
               <Link to="/instamart">InstaMart</Link>
             </li> */}
             <button
-              className="log-btn"
+              className="log-btn font-bold"
               onClick={() => {
                 btnName === "Login"
                   ? setBtnName("Logout")
@@ -55,7 +57,7 @@ const Header = function () {
             >
               {btnName}
             </button>
-            <li className="px-4">
+            <li className="px-4 ">
               Online Status : {onlineStatus ? "🟢" : "🔴"}
             </li>
             <li className="px-4 font-bold">{loggedInUser}</li>

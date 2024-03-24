@@ -71,3 +71,14 @@ two libraris of react
 - redux is separate library than react
 - easy debugging in redux
 - state management -> state container
+
+# Redux Toolkit
+
+- Install libraries -> Redux toolkit(@reduxjs/toolkit), react-redux
+- Build redux store - inside utils
+- connect redux store to app(componenet)
+- create a slice(cart function to add cart)
+- dispatch an action
+- Read data using selector
+- Build cart functionality
+- we can also have separate folder structure for redux also
