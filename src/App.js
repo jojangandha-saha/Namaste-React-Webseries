@@ -12,6 +12,7 @@ import Shimmer from "../components/Shimmer";
 import UserContext from "../utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
+import Cart from "../components/Cart";
 // import { faHourglass1 } from "@fortawesome/free-solid-svg-icons";
 // import InstaMart from "../components/InstaMart";
 // import ResturantCards
@@ -97,6 +98,10 @@ const appRouter = createBrowserRouter([
       //     </Suspense>
       //   ),
       // },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
     errorElement: <Error />,
   },

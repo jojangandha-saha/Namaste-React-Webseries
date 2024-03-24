@@ -9,9 +9,11 @@ const cartSlice = createSlice({
   },
   // reducer function corresponding to each actions which will be dispatched
   /* actions for cart functionality - add  item, remove item, clear item
-    actions -> functionalities to connect with redux store, modifies slice of store */
+    actions -> functionalities to connect with redux store, modifies slice of store .
+    this is multiple reducers*/
   reducers: {
     //access to initial state
+    //directly modifying / mutating the state
     addItem: (state, action) => {
       state.items.push(action.payload);
     },
@@ -36,6 +38,6 @@ const cartSlice = createSlice({
  * }
  */
 //export the actions
-export const { addItem, removeItem, clearCart } = cartSlice.action;
+export const { addItem, removeItem, clearCart } = cartSlice.actions;
 //export the reducer
 export default cartSlice.reducer;

@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import { CDN_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 function Itemlist({ items, dummy }) {
+  //to use Dispatch function
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    //dispatch an action -> the actions provided
+    //whatever we pass inside the action function -> connected to action.payload
+
+    dispatch(addItem(item));
+    //creates a payload object - and add whatever we pass inside action
+  };
   return (
     <div>
       {items.map((item) => (
@@ -27,6 +39,7 @@ function Itemlist({ items, dummy }) {
             <div className="absolute">
               <button
                 className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg"
+                //passing callback function
                 onClick={() => handleAddItem(item)}
               >
                 Add +
