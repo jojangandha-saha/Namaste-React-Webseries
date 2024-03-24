@@ -82,3 +82,11 @@ two libraris of react
 - Read data using selector
 - Build cart functionality
 - we can also have separate folder structure for redux also
+
+# Types of testing for developers
+
+(major first two tests)
+
+- Unit testing (test react components in isolation)
+- Integration testing (testing using code)
+- End to end testing( testing starting from user landing on to page till user gets out of app, checking user flow of application)

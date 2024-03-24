@@ -12,6 +12,7 @@ const cartSlice = createSlice({
     actions -> functionalities to connect with redux store, modifies slice of store .
     this is multiple reducers*/
   reducers: {
+    //Behind the scene -> redux is doing immutable states
     //access to initial state
     //directly modifying / mutating the state
     addItem: (state, action) => {
@@ -36,6 +37,8 @@ const cartSlice = createSlice({
  * },
  *  reducer
  * }
+ *
+ * RTK - either mutate existing state or return state
  */
 //export the actions
 export const { addItem, removeItem, clearCart } = cartSlice.actions;

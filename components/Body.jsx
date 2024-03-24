@@ -111,7 +111,10 @@ const Body = function () {
   ) : (
     <>
       <div>
-        <div className="filter flex">
+        <div className="font-bold m-4 p-4 text-2xl">
+          Top restaurants near Kolkata
+        </div>
+        <div className="filter flex mx-2 my-2">
           <div className="search m-2 p-2">
             <input
               type="text"
@@ -129,7 +132,7 @@ const Body = function () {
                 //filter restaurant cards && update ui
                 //searchText - data/value from input box
                 //bind the input box with a local state var
-                console.log(searchText);
+                // console.log(searchText);
                 //filter out list of rest based on searchText
                 const filteredRes = listOfRes.filter((res) =>
                   res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -151,29 +154,15 @@ const Body = function () {
                   (res) => res.info.avgRating > 4
                 );
 
-                setlistOfRes(filteredList);
+                setFilteredRes(filteredList);
               }}
             >
               Top rated Resturants
             </button>
           </div>
-
-          {/* <button
-            className="btn price-list"
-            onClick={() => {
-              //sort based on price
-              const filterPrice = listOfRes.filter(
-                (res) => res.data.costForTwo > 150
-              );
-              console.log(filterPrice);
-
-              setlistOfRes(filterPrice);
-            }}
-          >
-            Price
-          </button> */}
         </div>
-        <div className="flex flex-wrap">
+
+        <div className="flex flex-wrap justify-center">
           {/* resturants card Components */}
           {/* <ResturantCards
               resName="French Loaf"
