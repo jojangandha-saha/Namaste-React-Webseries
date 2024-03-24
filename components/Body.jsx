@@ -35,10 +35,10 @@ const Body = function () {
     //optional chaining
     //structure of data changed.
     setlistOfRes(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRes(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
